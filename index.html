@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=/, initial-scale=1.0">
+    <title>JS-5></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1> JavaScript handson-5</h1>
+    <h1>Strings</h1><hr>
+    <p><b>1-Count Characters</b></p>
+    <p>You are given a string  S, and your task is to return an array B (having a size of  2 ), where  B [ 0 ] contains the count of character A (uppercase) in string S and  B[ 1 ] contains the count of character D (uppercase) in string S.</p>
+    <pre>const countCharacters = (S) => 
+        {
+          const B=[0,0];
+          for(let i=0;i< S.length;i++){
+          if (S[i]=== 'A'){
+                    B[0]++;
+            }
+                else if (S[i]==='D'){
+                   B[1]++;
+               }
+             }
+         return B;
+        };
+
+    </pre>
+    <hr>
+    <p><b>2-Count the Heads</b></p>
+    <p>Tina is given a string  S which contains the first letter of all the student names in her class. She got a curiosity to check how many people have their names starting from the same alphabet. So given a string  S , she decided to write a code that finds out the count of characters that occur more than once in the string.</p>
+    <pre>
+        var Count_Occ = (s) => 
+{
+  let arr=s.split("").sort();
+  let heads="";
+  let visit=[];
+  let k=0;
+  let res="";
+  for(let i=0;i< arr.length;i++)
+  {
+    let count=0;
+    for(let j=i;j< arr.length;j++)
+    {
+      if(arr[i] === arr[j])
+      {
+        heads=arr[i];
+        count++;
+      }
+    }
+     if(!visit.includes(heads)&&count>=2)
+        {
+        visit[k]=heads;
+        visit[k+1]=count;
+        k=k+2;
+      }
+    }
+     res=visit.join("");
+    return res;
+};
+ 
+
+    </pre>
+    <hr>
+    <p><b>3-Count the Vowels</b></p>
+    <p>You are given a string  S containing both uppercase and lowercase letters. You need to find out the number of vowels in the given string.</p>
+    <pre>var Count_Vowels= (S) => 
+        {
+         var vowel_list = 'aeiouAEIOU';
+          var vcount = 0;
+          
+          for(var  x= 0; x < S.length ; x++)
+          {
+            if (vowel_list.indexOf(S[x])!==-1)
+            {
+              vcount += 1;
+            }
+          
+          }
+          return vcount;
+        
+        };
+         </pre>
+         <hr>
+       <p><b>4-Concatenate the Strings</b></p>  
+       <p>You are given two strings  S 1 and  S 2(containing both uppercase and lowercase letters), You need to retrun a string which is the concatenation of both the given strings. </p>
+       <pre>var Concatenate_Strings = (S1, S2) => 
+        {
+              return S1.concat(S2)
+        };
+         </pre>
+         <hr>
+        <p><b>5-Find Length</b></p>  <p>S and your task is to return the length of the string  S .</p>
+        <pre>const findLength = (S) => 
+            {
+                let count=0
+                for(let i=0;i< S.length;i++){
+                  count++
+                }
+                return count
+                
+            };
+             </pre>
+             <hr>
+
+           <p><b>6-Find the Winner</b></p>  
+           <p>You are given a string  S consisting of two letters  A  and  D ,where each character represent the winner of N games played between Aditya and Danish, where letter  A represents the win of Aditya and letter D represents the win of Danish.  You need to find out the that which player wins the maximum number of games or there is a draw between them.</p>
+           <pre>var Game_Winner = (S) => 
+            {
+              var countA=0;
+              var countD=0;
+            
+             for(let i=0;i< S.length;i++){
+             if(S[i]==='A'){
+               countA++;
+               }
+               else{
+                 countD++;
+               }
+               
+             }
+             if(countA>countD){
+               return "Aditya";
+             }
+             else if(countA===countD){
+               return "Draw";
+             }
+             else  {return "Danish";
+             }
+             
+             };</pre>
+             <hr>
+       <p><b>7-Join Strings</b></p> 
+       <p>You are given two strings  S and   P , and your task is to concatenate them and return the concatenated string.</p>     
+       <pre>const joinStrings = (S, P) => 
+        {
+            return (S.concat(P))
+        };
+         
+        </pre>
+        <hr>
+        <p><b>8-Plaindrome Check</b></p>
+        <p>You are given a string  S, Your task is to check wether the given string is a  Palindrom  or not.A Palindrome  is a string, which turnout same when read in reverse direction. Example: "naman" is a Palindrome. String can contain both upppercase lowercase letters.</p>
+        <pre>var Palin_Check = (str) =>
+            {
+              var str_split=str.split("");
+              var rev_str=str_split.reverse();
+              var join_str=rev_str.join("");
+              if(str===join_str)
+              {
+                return "True"
+              }
+              else{
+               return "False"}
+            };
+            </pre>
+            <hr>
+
+           <p><b>9-Reverse the String</b></p> 
+           <p>You are given a string S, Your task is to Reverse the string.String can contain both upppercase lowercase letters. </p>
+           <pre>var Reverse_String = (str) => 
+            {
+                 var str_splits=str.split("")
+                 var str_rev=str_splits.reverse();
+                 var str_join=str_rev.join("");
+                 return(str_join);
+            
+            };
+             </pre>
+             <hr>
+         <p><b>10-Match the Strings</b></p>    
+         <p>You are given two strings S1 and  S2, Your task is to print  YES  if both strings are same else print NO .</p>
+         <pre>
+            var String_Match = (S1,S2) => 
+            {
+                  if(S1===S2){
+                    return "YES";
+                  }
+                  
+                    return "NO";
+                  
+             
+            };</pre>
+            <hr>
+        <p><b>11-String Replace</b></p> 
+        <p>You are given a string  S, along with a pattern string and a text string.  You need to repalce the pattern string in  S to the text string.</p>
+        <pre>var Replace = (S, pattern , text) => 
+            {
+              let ans =""
+              let index=S.search(pattern);
+              for(let i=0;i< index;i++){
+                ans+=S[i]
+              }
+              ans+=text;
+              for(let i=index+pattern.length;i< S.length;i++){
+                ans+=S[i]
+              }
+              return ans
+            };</pre>
+            <hr>
+            <p><b>12-Split the String</b></p>
+            <p>You are given a string S, Your task is to split the string with respect to spaces.</p>
+            <pre>var Split_the_string = (S) => 
+                {
+                 
+                  let str=S.split(" ");
+                  return str;
+                   
+                };
+                 
+                </pre>
+                <hr>
+              <p><b>13-Count the Vowels and Consonants</b></p>  
+              <p>You are given a string S containing both uppercase and lowercase letters.  You need to find out the number of vowels and the number of consonants in the given string.</p>
+              <pre>
+                var Count_Vowels= (S) => 
+                {
+                      var vowel_list = 'aeiouAEIOU';
+                  var vcount = 0;
+                  
+                  for(var  x= 0; x < S.length ; x++)
+                  {
+                    if (vowel_list.indexOf(S[x])!==-1)
+                    {
+                      vcount += 1;
+                    }
+                  
+                  }
+                  return vcount;
+                
+                };
+                var Count_Consonants= (S) => 
+                {
+                  var ccount=0;
+                  var consonants_list='bcdfghjklmnpqrstvwxyzABCDFGHJKLMNPQRSTVWXYZ'
+                  for(let i=0;i< S.length;i++)
+                  {
+                    if(consonants_list.indexOf(S[i])!==-1)
+                    {
+                      ccount +=1;
+                    }
+                  }
+                  return ccount
+                };
+                 </pre>
+                 <hr>
+</body>
+</html>
